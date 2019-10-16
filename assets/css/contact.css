@@ -1,0 +1,9 @@
+#contact-email {
+  font-size: 200%;
+}
+
+@media (max-width: 800px) {
+  #contact-email {
+    font-size: 150%;
+  }
+}

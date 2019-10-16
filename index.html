@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/work.css" />
+		<link rel="stylesheet" href="assets/css/contact.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -26,9 +27,11 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#work">Work</a></li>
+								<li><a href="#contact">Contact</a></li>
+								<li><a href="#work" id="work-button">Work</a></li>
 								<li><a href="#about">About</a></li>
-								<li><a href="#elements">Elements</a></li>
+								<li><a href="" target="_blank" id="cv-button">CV</a></li>
+								<!-- <li><a href="#elements">Elements</a></li> -->
 
 							</ul>
 						</nav>
@@ -40,14 +43,17 @@
 							<article id="work">
 								<h2 class="major">Work</h2>
 								<div id="work-projects">
-								
 								</div>
 								<div id="work-project-details">
-									project details:
-									<p id="work-project-details-content">content:</p>
-									<p id="work-project-details-type">type:</p>
-									<p id="work-project-details-tech">tech:</p>
-
+									<img id="work-project-details-img" src=""/>
+									<h2 id="work-project-details-title"></h2>
+									<p id="work-project-details-content"></p>
+									<span class="work-project-details-separator"></span>
+									<p id="work-project-details-type"></p>
+									<span class="work-project-details-separator"></span>
+									<code id="work-project-details-tech"></code>
+									<a href="#" class="button primary">Cool project, I want you on my team!</a>
+									<a href="#work" class="button btn" id="work-project-details-back">Back to projects</a>
 								</div>
 							</article>
 
@@ -110,32 +116,11 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
+								<a id="contact-email" href="mailto:remy.kaloustian@gmail.com">remy.kaloustian@gmail.com</a>
+								
+								<button class="btn" data-clipboard-text="remy.kaloustian@gmail.com">
+									Click to copy my email!
+								</button>
 							</article>
 
 						<!-- Elements -->
@@ -382,7 +367,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					</div>
 					
-					<p class="copyright">remy.kaloustian@gmail.com</p>
 				<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">Props to HTML5 UP for the design.</a>.</p>
@@ -394,12 +378,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<div id="bg"></div>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			crossorigin="anonymous"></script>	
+		<script type="text/javascript" src="https://milankyncl.github.io/jquery-copy-to-clipboard/jquery.copy-to-clipboard.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/clipboard.min.js"></script>
+		<script src="assets/js/contact.js"></script>
 		<script src="assets/js/work.js"></script>
-
+		<script src="assets/js/cv.js"></script>
 	</body>
 </html>
