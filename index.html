@@ -4,7 +4,9 @@
 		<title>Rémy KALOUSTIAN</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/animate.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/home.css" />
 		<link rel="stylesheet" href="assets/css/work.css" />
 		<link rel="stylesheet" href="assets/css/contact.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -16,8 +18,8 @@
 
 				<!-- Header -->
 					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
+						<div class="logo" id="usa-container">
+							<img src="images/usa.png" id="usa-logo"/>
 						</div>
 						<div class="content">
 							<div class="inner">
@@ -52,7 +54,7 @@
 									<p id="work-project-details-type"></p>
 									<span class="work-project-details-separator"></span>
 									<code id="work-project-details-tech"></code>
-									<a href="#" class="button primary">Cool project, I want you on my team!</a>
+									<a href="#contact" class="button primary">Cool project, I want you on my team!</a>
 									<a href="#work" class="button btn" id="work-project-details-back">Back to projects</a>
 								</div>
 							</article>
@@ -64,7 +66,8 @@
 								<p>
 									Hey how are you doing? Hope you are having an awesome day, my name is Rémy (pronounce "Ray-mee"). 
 									Let me take two seconds to introduce myself. 
-									I am 24, born and educated in France, with an American dream.
+									I am a 24 years old software engineer, born and educated in France. 
+									I am currently in France, but looking relentlessly for a job in the US.
 								</p>
 								<span class="image main"><img src="images/code.jpg" alt="" /></span>
 								<p>
@@ -116,9 +119,17 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<a id="contact-email" href="mailto:remy.kaloustian@gmail.com">remy.kaloustian@gmail.com</a>
-								
-								<button class="btn" data-clipboard-text="remy.kaloustian@gmail.com">
+								<span class="image main"><img src="images/american-plane.jpg" alt="" /></span>
+								<p>You want to help me achieve my American dream?<br> 
+									Awesome! You can send me an email to make my day 🙌.
+								</p>
+								<p class="animated infinite pulse">
+									<a id="contact-email"
+										href="mailto:remy.kaloustian@gmail.com">
+										remy.kaloustian@gmail.com
+									</a>	
+								</p>
+								<button id="contact-copy-btn" data-clipboard-text="remy.kaloustian@gmail.com">
 									Click to copy my email!
 								</button>
 							</article>
@@ -369,7 +380,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">Props to HTML5 UP for the design.</a>.</p>
+						<p class="copyright" id="props">Props to HTML5 UP for the design.</p>
 					</footer>
 
 			</div>
@@ -382,13 +393,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			src="https://code.jquery.com/jquery-3.4.1.js"
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 			crossorigin="anonymous"></script>	
+		<!-- <script src="assets/js/jquery.min.js"></script> -->
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
+		<script type="text/javascript" src="https://milankyncl.github.io/jquery-copy-to-clipboard/jquery.copy-to-clipboard.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script src="assets/js/clipboard.min.js"></script>
-		<script src="assets/js/contact.js"></script>
 		<script src="assets/js/work.js"></script>
 		<script src="assets/js/cv.js"></script>
+		<script src="assets/js/contact.js"></script>
 	</body>
 </html>
