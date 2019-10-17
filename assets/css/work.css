@@ -57,6 +57,7 @@
   align-items: center;
   display: none;
   flex-direction: column;
+  text-align: justify;
   width: 100%;
 }
 
