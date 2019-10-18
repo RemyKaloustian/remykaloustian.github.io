@@ -200,17 +200,6 @@ const unformatTitle = (title) => {
   return title.split('-').join(' ');
 }
 
-const getBaseURL = (URL) => {
-  let splitURL = URL.split('/');
-  splitURL.pop();
-  splitURL = splitURL.join('/').replace(/,/g, "/");
-  return splitURL;
-}
-
-const getProjectImageURL = (imageName) => {
-  return `${getBaseURL(window.location.href)}/images/projects/${imageName}`;
-}
-
 const setProjectDetails = (projectDetailsId, img, title, content, type, tech ) => {
   $(`${projectDetailsId}-img`).attr("src", getProjectImageURL(img));
   $(`${projectDetailsId}-title`).text(title);
