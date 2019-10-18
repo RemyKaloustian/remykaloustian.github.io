@@ -5,8 +5,8 @@ const getBaseURL = (URL) => {
   return splitURL;
 }
 
-const getImageURL = (imageName) => {
-  return `${getBaseURL(window.location.href)}/images/${imageName}`;
+const getAboutImageURL = (imageName) => {
+  return `${getBaseURL(window.location.href)}/images/about/${imageName}`;
 }
 
 const getProjectImageURL = (imageName) => {

@@ -16,7 +16,7 @@ $(document).ready(function(){
     if(!hasLoadedImages){
       hasLoadedImages = true;
       aboutImages.forEach(element => {
-        $(`#about-img-${element.id}`).append(`<img src="${getImageURL(element.id)}.jpg"/>`);
+        $(`#about-img-${element.id}`).append(`<img src="${getAboutImageURL(element.id)}.jpg"/>`);
       });
     }
   });
