@@ -1,13 +1,13 @@
 
 $(document).ready(function(){
   const aboutImages = [
-    {id:"statue", src:""},
-    {id:"code", src:""},
-    {id:"school", src:""},
-    {id:"work-harder", src:""},
-    {id:"code2", src:""},
-    {id:"miami2", src:""},
-    {id:"books", src:""},
+    { id:"statue" },
+    { id:"code" },
+    { id:"school" },
+    { id:"work-harder" },
+    { id:"code2" },
+    { id:"miami2" },
+    { id:"books" },
   ];
 
   let hasLoadedImages = false;

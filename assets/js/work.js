@@ -2,14 +2,14 @@ const initializeProjects = () => {
   return [
     {
       title: "Bakery",
-      img: "bakery.jpg",
+      img: "bakery.png",
       type:"Personal project",
       content:"I wanted to understand the different challenges behind an app like Amazon. So I created a similar app but just for bakeries. This project is in progress, but I have already done the big part between UI management and data management (components with React and the Redux store). Thanks to this project I am now more efficient with React and Redux and I understand even better the key points to have in mind when using an app with React & Redux.  ",
       tech:"ReactJS, Redux, HTML, CSS",
     },
     {
       title: "Aero",
-      img: "aero.jpg",
+      img: "aero.png",
       type:"Done as a software engineer at Codelitt company",
       content:"Aero is an application for real estate. It regroups the details of availabilities, allows to manage those availabilities and create presentations(like PDF or PowerPoint) with them. Working on Aero was a huge learning experience because I have never been in a React project that big. It allowed me to improve my debugging skills, my understanding of React and my communication in a big team.",
       tech:"ReactJS, Redux, HTML, CSS",
@@ -23,7 +23,7 @@ const initializeProjects = () => {
     },
     {
       title: "PartyTable",
-      img: "tablegame.jpg",
+      img: "tablegame.png",
       type:"School project",
       content:"PartyTable was a series of mini games meant to be played on a Samsung touch table. The tricky part of this project was to really use the support and not just think of it as a computer big screen. It forced me to be more creative and thoughtful of the user and its interactions.",
       tech:"ES6, JavaScript, TUIO, HTML, CSS",
@@ -37,7 +37,7 @@ const initializeProjects = () => {
     },
     {
       title: "Firefighter",
-      img: "firefighter.jpg",
+      img: "firefighter.png",
       type:"School project",
       content:"Firefighter was an app created to help the firefighting team during a deployment. The goal of the app was to trace the route to the current fire the team was being assigned to. It included other helpful information like the nearest water sources. For this project, we interviewed a former firefighter in order to understand how the team operates and in which context they could use the app.",
       tech:"ES6, jQuery, HTML, CSS",
@@ -142,7 +142,7 @@ const initializeProjects = () => {
     },
     {
       title: "Parking",
-      img: "parking.jpeg",
+      img: "parking.png",
       type:"School project",
       content:"Parking was a parking management application for different types of vehicles. This project was useful for me because it allowed me to put into practice Object-Oriented Programmation principles such as SOLID principles and design patterns. I used that experience in my internship (see Infinite Creatures).",
       tech:"Java",
@@ -169,7 +169,7 @@ const initializeProjects = () => {
       tech:"C++",
     },
     {
-      title: "Webcovoiturage",
+      title: "Webvoiturage",
       img: "webco.png",
       type:"School project",
       content:"Webcovoiturage was a carpooling website between students of the department. I consider this project a failure on my part. Beginner in webdesign, I had to create a design for the site, which was awkwardly ugly and that other members of the group had to remake. In addition, the group did not have a good cohesion and therefore led to frail working conditions. This was a big lesson on taking ownership, which I failed to see at the time and realized only later on.",
@@ -184,7 +184,7 @@ const initializeProjects = () => {
     },
     {
       title: "Rover",
-      img: "rover.jpg",
+      img: "rover.png",
       type:"School project",
       content:"In this project, I had to program a little Rover to enter a maze and (with the sue of different types of sensors) make it exit the maze on its own, with no external help. This final year of highscool project allowed me to acquire the basis of algorithmic and made me discover Computer Sciences. This is what motivated me to continue in the Computer Sciences path.",
       tech:"I used the rover software for visual coding (UML-like)",
@@ -233,12 +233,15 @@ const displayProjects = (projects) => {
         <div id='${formatTitle(element.title)}' class='work-project-img'>
         </div>
       </div>`);
+  });
+}
 
+const setProjectsBackground = (projects) => {
+  projects.forEach(element => {
     let backgroundImg = getProjectImageURL(element.img);
     $(`#${formatTitle(element.title)}`).css("background-image", `url(${backgroundImg})`);
   });
 }
-
 
 const addHandlerShowProjectDetails = (projectsSection, projectDetailsId, projects) => {
   $(".work-project").click((e) => {
@@ -248,8 +251,9 @@ const addHandlerShowProjectDetails = (projectsSection, projectDetailsId, project
   });
 }
 
-const addHandlerShowProjects = (projectsSection, projectDetailsId) => {
+const addHandlerShowProjects = (projectsSection, projectDetailsId, projects) => {
   $("#work-button").click((e) => {
+    setProjectsBackground(projects);
     toggleProjectDetails(projectsSection, projectDetailsId, true);
   });
 }
@@ -263,7 +267,7 @@ const addHandlerBackToProjects = (projectsSection, projectDetailsId) => {
 const addClickHandlersForProjects = (projects) => {
   const projectsSection = "#work-projects";
   const projectDetailsId = "#work-project-details";
-  addHandlerShowProjects(projectsSection, projectDetailsId);
+  addHandlerShowProjects(projectsSection, projectDetailsId, projects);
   addHandlerShowProjectDetails(projectsSection, projectDetailsId, projects);
   addHandlerBackToProjects(projectsSection, projectDetailsId);
 }
@@ -274,5 +278,3 @@ $(document).ready(function(){
   displayProjects(projects);
   addClickHandlersForProjects(projects);
 });
-
-
