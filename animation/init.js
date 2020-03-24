@@ -16,9 +16,39 @@ $(document).ready(function(){
     }
   }
 
+  function resetHTMLValues(){
+    const defaultValues = getDefaults();
+    $("#animation-select").val(defaultValues.animation);
+    $("#duration").val(defaultValues.duration);
+    $("#fill-mode").val(defaultValues.fill_mode);
+    $("#iteration").val(defaultValues.iteration_count);
+    $("#iteration-infinite").prop('checked', false);
+    $('#iteration').removeAttr('disabled', false)
+    $("#iteration-txt").removeClass("greyed")
+    $("#direction").val(defaultValues.direction);
+    $("#timing").val(defaultValues.timing_function);
+
+  }
+
   function resetAnimation(){
     animationObj = getDefaults();
-    //TODO: reset html values, && reset css values
+    $("#blood-raven").removeClass();
+    applyAnimCSS(animationObj, false);
+    resetHTMLValues();
+  }
+
+  function applyAnimCSS(animObj, playAnim){
+    $("#blood-raven").css({
+      "animation-duration" : animObj.duration+"s",
+      "animation-fill-mode" : animObj.fill_mode,
+      "animation-iteration-count" : animObj.iteration_count,
+      "animation-direction" : animObj.direction,
+      "animation-timing-function" : animObj.timing_function
+    });
+
+    if(playAnim){
+      $("#blood-raven").addClass(animObj.animation)
+    }
   }
 
   function addChangeHandlers(){
@@ -62,46 +92,74 @@ $(document).ready(function(){
       animationObj.iteration_count = "1"
     }
   }
+
+  function getCurrentAnimKeyframe(animation){
+    return `
+    @keyframes slide-in {\n
+      \t 0% { transform: translate(-400px); }\n
+      \t 100% { transform: translate(0px); }\n
+    }
+    `
+  }
+
+  function exportTo(){
+    let cssExport = `
+    .exportedAnim { \n
+      \t animation: ${animationObj.animation};\n
+      \t animation-duration: ${animationObj.duration}s;\n
+      \t animation-fill-mode: ${animationObj.fill_mode};\n
+      \t animation-iteration-count: ${animationObj.iteration_count};\n
+      \t animation-direction: ${animationObj.direction}; \n
+      \tanimation-timing-function: ${animationObj.timing_function};\n
+    }\n
+    
+    ${getCurrentAnimKeyframe(animationObj.animation)}
+    `
+    $("#export-content").html(cssExport);
+    displayExportMd();
+  }
+  
+  function displayExportMd(){
+    // $("#export-md").css('visibility', 'visible');
+    $("#export-md").removeClass('outcoming-md');
+    $("#export-md").addClass('incoming-md');
+
+  }
+
+  function hideDisplayMd(){
+    // $("#export-md").css('visibility', 'hidden');
+    $("#export-md").removeClass('incoming-md');
+    $("#export-md").addClass('outcoming-md');
+
+  }
   
   let animationObj  = getDefaults();
-  // let animation = defaults.animation;
-  // let duration = defaults.duration;
-  // let fill_mode = defaults.fill_mode;
-  // let iteration_count = defaults.iteration_count;
-  // let direction = defaults.direction;
-  // let timing_function = defaults.timing_function;
-
   addChangeHandlers();
-
+  
   $("#btn-reset").click(function(){
     resetAnimation();
   })
 
-  //TO CORRECT
+  $("#btn-export").click(function(){
+    exportTo();  
+  })
+
+  $("#export-close").click(function(){
+    hideDisplayMd();  
+  })
+
   $("#btn-try").click(function(){
-    //will remove this once everything finished
-    console.log("animation = " + animationObj.animation);
-    console.log("duration = " + animationObj.duration);
-    console.log("fill mode = " + animationObj.fill_mode);
-    console.log("iteration = " + animationObj.iteration_count);
-    console.log("direction = " + animationObj.direction);
-    console.log("timing function = " + animationObj.timing_function);
+    applyAnimCSS(animationObj, true);
 
-
-    $("#blood-raven").css({
-      "animation-duration" : animationObj.duration+"s",
-      "animation-fill-mode" : animationObj.fill_mode,
-      "animation-iteration-count" : animationObj.iteration_count,
-      "animation-direction" : animationObj.direction,
-      "animation-timing-function" : animationObj.timing_function
-    });
-
-    $("#blood-raven").addClass(animationObj.animation)
-
-    if(animationObj.fill_mode === "backwards" && animationObj.iteration_count !== "infinite"){
+    if(animationObj.fill_mode === "backwards" &&
+      animationObj.iteration_count !== "infinite" &&
+      animationObj.iteration_count < 2){
       setTimeout(function(){
         $("#blood-raven").removeClass(animationObj.animation);
       }, secToMs(animationObj.duration));
     }
   })
 });
+
+
+//TODO: Add more animations, add more options in options, do the export

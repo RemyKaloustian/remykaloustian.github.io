@@ -2,6 +2,7 @@
 <html>
   <head>
       <link rel="stylesheet" type="text/css" href="style.css">
+      <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
       <title>DoPe AnImAtIoN</title>
       <script
         src="https://code.jquery.com/jquery-3.4.1.js"
@@ -32,7 +33,8 @@
       </select>
       <p id="iteration-txt">iteration count</p>
       <input type="number" id="iteration" min="0" value="1">
-      <p>infinite?</p>
+      <br>
+      <span>infinite?</span>
       <input type="checkbox" id="iteration-infinite">
       <p>animation direction</p>
       <select id="direction">
@@ -49,11 +51,15 @@
   <div class="btns-ctn">
     <button id="btn-try">Try it out!</button>
     <button id="btn-reset">Reset</button>
-    <button>Export</button>
-
+    <button id="btn-export">Export</button>
   </div>
+  
 </div>
-
+<div id="export-md">
+  <h2>Copy that!</h2>
+  <p id="export-content"></p>
+  <button id="export-close">Got it!</button>
+</div>
 <script src="init.js"></script>
 
 </body>

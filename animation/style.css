@@ -1,28 +1,78 @@
-html, body, div, p, h1, h2, h3, h4, h5{
+html, body, div, p, h1, h2, h3, h4, h5 {
   padding: 0px;
   margin: 0px;
+  font-family: 'Poppins';
+  color: white;
 }
 
-#blood-raven{
-  width: 250px;
+body {
+  background-color: #ff3f34;
+  overflow-x:hidden;
 }
 
-h1{
+#blood-raven {
+  width: 350px;
+}
+
+h1 {
   text-align: center;
+  color: white;
 }
 
-.animations-ctn{
+p, span {
+  color: white;
+}
+
+select {
+  font-family: 'Poppins';
+}
+
+button {
+  background-color: #ff5e57;
+  border: none;
+  border-top: 3px solid #ff5e57;
+  color: white;
+  font-family: 'Poppins';
+  padding: 20px;
+  width: 200px;
+  transition-duration: 0.4s;
+
+}
+
+button:hover {
+  border-top: 3px solid #3c40c6;
+  transition-duration: 0.4s;
+}
+
+.animations-ctn {
   display: flex;
   justify-content: center;
 }
 
-.btns-ctn{
+.btns-ctn {
   display: flex;
   justify-content: center;
 }
 
-.greyed{
+.greyed {
   color: gray;
+}
+
+#export-md{
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  width: 100%;
+  background-color: #e17055;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+#export-content {
+  white-space: pre;
+  line-height: 12px;
 }
 
 
@@ -31,35 +81,66 @@ h1{
 /* ============================ */
 
 
-.animated-pic{
+.incoming-md {
+ animation: incomingMd;
+ animation-duration: 1s;
+ animation-fill-mode: forwards;
+}
+@keyframes incomingMd {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+.outcoming-md {
+  animation: outcomingMd;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+ }
+ @keyframes outcomingMd {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.animated-pic {
   animation: slide-in 3s;
 }
 
-.slide-in{ 
+.slide-in { 
   animation-name: slide-in;
 }
 
 
-.slide-out{ 
+.slide-out { 
   animation-name: slide-out;
 }
 
-@keyframes slide-in{
-  0%{
+@keyframes slide-in {
+  0% {
     transform: translate(-400px);
   }
 
-  100%{
+  100% {
     transform: translate(0px);
   }
 }
 
-@keyframes slide-out{
-  0%{
+@keyframes slide-out {
+  0% {
     transform: translate(0px);
   }
 
-  100%{
+  100% {
     transform: translate(-400px);
   }
 }
+
