@@ -1,0 +1,65 @@
+html, body, div, p, h1, h2, h3, h4, h5{
+  padding: 0px;
+  margin: 0px;
+}
+
+#blood-raven{
+  width: 250px;
+}
+
+h1{
+  text-align: center;
+}
+
+.animations-ctn{
+  display: flex;
+  justify-content: center;
+}
+
+.btns-ctn{
+  display: flex;
+  justify-content: center;
+}
+
+.greyed{
+  color: gray;
+}
+
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================ */
+
+
+.animated-pic{
+  animation: slide-in 3s;
+}
+
+.slide-in{ 
+  animation-name: slide-in;
+}
+
+
+.slide-out{ 
+  animation-name: slide-out;
+}
+
+@keyframes slide-in{
+  0%{
+    transform: translate(-400px);
+  }
+
+  100%{
+    transform: translate(0px);
+  }
+}
+
+@keyframes slide-out{
+  0%{
+    transform: translate(0px);
+  }
+
+  100%{
+    transform: translate(-400px);
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <title>DoPe AnImAtIoN</title>
+      <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+      </script>
+  </head>
+<body>
+
+<h1>DoPe AnImAtIoN sHoWcAsE</h1>
+
+
+<div class="body-ctn">
+  <div class="animations-ctn">
+    <img src="blood-raven.png" id="blood-raven"/>
+    <div>
+      <p>animation</p>
+      <select id="animation-select">
+        <option value="slide-in">slide-in</option>
+        <option value="slide-out">slide-out</option>
+      </select>
+      <p>time(in sec)</p>
+      <input type="number" id="duration" min="0" value="1">
+      <p>fill mode</p>
+      <select id="fill-mode">
+        <option value="backwards">backwards</option>
+        <option value="forwards">forwards</option>
+      </select>
+      <p id="iteration-txt">iteration count</p>
+      <input type="number" id="iteration" min="0" value="1">
+      <p>infinite?</p>
+      <input type="checkbox" id="iteration-infinite">
+      <p>animation direction</p>
+      <select id="direction">
+        <option value="alternate">alternate</option>
+        <option value="reverse">reverse</option>
+      </select>
+      <p>animation timing function</p>
+      <select id="timing">
+        <option value="linear">linear</option>
+        <option value="ease">ease</option>
+      </select>
+    </div>
+  </div>
+  <div class="btns-ctn">
+    <button id="btn-try">Try it out!</button>
+    <button id="btn-reset">Reset</button>
+    <button>Export</button>
+
+  </div>
+</div>
+
+<script src="init.js"></script>
+
+</body>
+</html>

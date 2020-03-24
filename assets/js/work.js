@@ -8,10 +8,10 @@ const initializeProjects = () => {
       tech:"ReactJS, Redux, HTML, CSS",
     },
     {
-      title: "Aero",
+      title: "Halo",
       img: "aero.png",
       type:"Done as a software engineer at Codelitt company",
-      content:"Aero is an application for real estate. It regroups the details of availabilities, allows to manage those availabilities and create presentations(like PDF or PowerPoint) with them. Working on Aero was a huge learning experience because I have never been in a React project that big. It allowed me to improve my debugging skills, my understanding of React and my communication in a big team.",
+      content:"Halo is an application for real estate. It regroups the details of availabilities, allows to manage those availabilities and create presentations(like PDF or PowerPoint) with them. Working on Halo was a huge learning experience because I have never been in a React project that big. It allowed me to improve my debugging skills, my understanding of React and my communication in a big team.",
       tech:"ReactJS, Redux, HTML, CSS",
     },
     {
