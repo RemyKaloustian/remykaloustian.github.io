@@ -23,6 +23,10 @@
       <select id="animation-select">
         <option value="slide-in">slide-in</option>
         <option value="slide-out">slide-out</option>
+        <option value="slide-up">slide-up</option>
+        <option value="slide-down">slide-down</option>
+        <option value="glow">glow</option>
+        <option value="rotate">rotate</option>
       </select>
       <p>time(in sec)</p>
       <input type="number" id="duration" min="0" value="1">
@@ -30,6 +34,9 @@
       <select id="fill-mode">
         <option value="backwards">backwards</option>
         <option value="forwards">forwards</option>
+        <option value="both">both</option>
+        <option value="none">none</option>
+
       </select>
       <p id="iteration-txt">iteration count</p>
       <input type="number" id="iteration" min="0" value="1">
@@ -38,13 +45,17 @@
       <input type="checkbox" id="iteration-infinite">
       <p>animation direction</p>
       <select id="direction">
+        <option value="normal">normal</option>
         <option value="alternate">alternate</option>
+        <option value="alternate-reverse">alternate-reverse</option>
         <option value="reverse">reverse</option>
       </select>
       <p>animation timing function</p>
       <select id="timing">
         <option value="linear">linear</option>
         <option value="ease">ease</option>
+        <option value="ease-in">ease-in</option>
+        <option value="ease-out">ease-out</option>
       </select>
     </div>
   </div>

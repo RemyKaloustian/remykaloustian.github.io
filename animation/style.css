@@ -44,6 +44,10 @@ button:hover {
   transition-duration: 0.4s;
 }
 
+button:focus{
+  outline: none;
+}
+
 .animations-ctn {
   display: flex;
   justify-content: center;
@@ -75,25 +79,19 @@ button:hover {
   line-height: 12px;
 }
 
-
 /* ============================= */
 /* ANIMATIONS */
 /* ============================ */
-
 
 .incoming-md {
  animation: incomingMd;
  animation-duration: 1s;
  animation-fill-mode: forwards;
 }
-@keyframes incomingMd {
-  0% {
-    left: 100%;
-  }
 
-  100% {
-    left: 0px;
-  }
+@keyframes incomingMd {
+  0% { left: 100%; }
+  100% { left: 0px; }
 }
 
 .outcoming-md {
@@ -101,46 +99,52 @@ button:hover {
   animation-duration: 1s;
   animation-fill-mode: forwards;
  }
- @keyframes outcomingMd {
-  0% {
-    left: 0px;
-  }
 
-  100% {
-    left: 100%;
-  }
+ @keyframes outcomingMd {
+  0% { left: 0px; }
+  100% { left: 100%; }
 }
 
 .animated-pic {
   animation: slide-in 3s;
 }
 
-.slide-in { 
-  animation-name: slide-in;
-}
-
-
-.slide-out { 
-  animation-name: slide-out;
-}
-
+.slide-in { animation-name: slide-in; }
 @keyframes slide-in {
-  0% {
-    transform: translate(-400px);
-  }
-
-  100% {
-    transform: translate(0px);
-  }
+  0% { transform: translate(-400px); }
+  100% { transform: translate(0px); }
 }
 
+.slide-out { animation-name: slide-out; }
 @keyframes slide-out {
-  0% {
-    transform: translate(0px);
-  }
-
-  100% {
-    transform: translate(-400px);
-  }
+  0% { transform: translate(0px); }
+  100% { transform: translate(-400px); }
 }
 
+.slide-up { animation-name: slide-up; }
+@keyframes slide-up {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-400px); }
+}
+
+.slide-down { animation-name: slide-down; }
+@keyframes slide-down {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(400px); }
+}
+
+.glow { animation-name: glow; }
+@keyframes glow {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.rotate { animation-name: rotate; }
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg);
+  }
+}

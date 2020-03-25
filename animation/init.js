@@ -16,6 +16,52 @@ $(document).ready(function(){
     }
   }
 
+  function getKeyframes(){
+    return {
+      "slide-in" : `
+        @keyframes slide-in {\n
+          \t 0% { transform: translate(-400px); }\n
+          \t 100% { transform: translate(0px); }\n
+        }
+      `,
+
+      "slide-out" : `
+        @keyframes slide-out {\n
+          \t 0% { transform: translate(0px); }\n
+          \t 100% { transform: translate(-400px); }\n
+        }
+      `,
+
+      "slide-up" : `
+      @keyframes slide-up {\n
+        \t 0% { transform: translateY(0px); }\n
+        \t 100% { transform: translateY(-400px); }\n
+      }
+      `,
+      "slide-down" : `
+      @keyframes slide-down {\n
+        \t 0% { transform: translateY(0px); }\n
+        \t 100% { transform: translateY(400px); }\n
+      }
+      `,
+      "glow" : `
+      @keyframes glow { \n
+        \t 0% { transform: scale(1); }\n
+        \t 25% { transform: scale(1.2); }\n
+        \t 50% { transform: scale(1); }\n
+        \t 75% { transform: scale(1.2); }\n
+        \t 100% { transform: scale(1); }\n
+      }
+      `,
+      "rotate" : `
+      @keyframes rotate { \n
+        \t 0% { transform: rotate(0deg); } \n
+        \t 100% { transform: rotate(360deg); \n
+      }
+      `,
+    }
+  }
+
   function resetHTMLValues(){
     const defaultValues = getDefaults();
     $("#animation-select").val(defaultValues.animation);
@@ -94,12 +140,7 @@ $(document).ready(function(){
   }
 
   function getCurrentAnimKeyframe(animation){
-    return `
-    @keyframes slide-in {\n
-      \t 0% { transform: translate(-400px); }\n
-      \t 100% { transform: translate(0px); }\n
-    }
-    `
+    return getKeyframes()[animation];
   }
 
   function exportTo(){
@@ -110,7 +151,7 @@ $(document).ready(function(){
       \t animation-fill-mode: ${animationObj.fill_mode};\n
       \t animation-iteration-count: ${animationObj.iteration_count};\n
       \t animation-direction: ${animationObj.direction}; \n
-      \tanimation-timing-function: ${animationObj.timing_function};\n
+      \t animation-timing-function: ${animationObj.timing_function};\n
     }\n
     
     ${getCurrentAnimKeyframe(animationObj.animation)}
@@ -120,17 +161,13 @@ $(document).ready(function(){
   }
   
   function displayExportMd(){
-    // $("#export-md").css('visibility', 'visible');
     $("#export-md").removeClass('outcoming-md');
     $("#export-md").addClass('incoming-md');
-
   }
 
   function hideDisplayMd(){
-    // $("#export-md").css('visibility', 'hidden');
     $("#export-md").removeClass('incoming-md');
     $("#export-md").addClass('outcoming-md');
-
   }
   
   let animationObj  = getDefaults();
