@@ -1,5 +1,5 @@
 ///
-/// Dimension by HTML5 UP
+/// Ethereal by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
@@ -13,8 +13,8 @@
 			margin-bottom: 0;
 		}
 
-		> .fields  {
-			$gutter: (_size(element-margin) * 0.75);
+		> .fields {
+			$gutter: (_size(element-margin) * 1);
 
 			@include vendor('display', 'flex');
 			@include vendor('flex-wrap', 'wrap');
@@ -41,7 +41,7 @@
 			}
 		}
 
-		@include breakpoint('<=xsmall') {
+		@include breakpoint('<=small') {
 			> .fields {
 				$gutter: (_size(element-margin) * 0.75);
 
@@ -71,12 +71,10 @@
 	label {
 		color: _palette(fg-bold);
 		display: block;
+		font-family: _font(family-heading);
 		font-size: 0.8rem;
-		font-weight: _font(weight);
-		letter-spacing: _font(letter-spacing);
-		line-height: 1.5;
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
-		text-transform: uppercase;
+		font-weight: _font(weight-heading);
+		margin: 0 0 (_size(element-margin) * 0.325) 0;
 	}
 
 	input[type="text"],
@@ -86,18 +84,13 @@
 	select,
 	textarea {
 		@include vendor('appearance', 'none');
-		@include vendor('transition', (
-			'border-color #{_duration(transition)} ease-in-out',
-			'box-shadow #{_duration(transition)} ease-in-out',
-			'background-color #{_duration(transition)} ease-in-out'
-		));
-		background-color: transparent;
+		background: transparent;
+		border: solid 2px _palette(border);
 		border-radius: _size(border-radius);
-		border: solid _size(border-width) _palette(border);
 		color: inherit;
 		display: block;
 		outline: 0;
-		padding: 0 1rem;
+		padding: 0 0.75rem;
 		text-decoration: none;
 		width: 100%;
 
@@ -106,10 +99,13 @@
 		}
 
 		&:focus {
-			background: _palette(border-bg);
-			border-color: _palette(fg-bold);
-			box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);
+			border-color: _palette(accent3);
 		}
+	}
+
+	option {
+		background-color: _palette(fg-bold);
+		color: _palette(bg);
 	}
 
 	select {
@@ -122,7 +118,7 @@
 		text-overflow: ellipsis;
 
 		option {
-			color: _palette(fg);
+			color: _palette(fg-bold);
 			background: _palette(bg);
 		}
 
@@ -160,52 +156,88 @@
 
 		& + label {
 			@include icon(false, solid);
-			@include vendor('user-select', 'none');
+			position: relative;
 			color: _palette(fg);
 			cursor: pointer;
 			display: inline-block;
-			font-size: 0.8rem;
+			font-size: 1rem;
 			font-weight: _font(weight);
-			margin: 0 0 (_size(element-margin) * 0.25) 0;
+			margin-bottom: 0;
 			padding-left: (_size(element-height) * 0.6) + 1rem;
-			padding-right: 0.75rem;
-			position: relative;
+			padding-right: 1rem;
 
 			&:before {
-				@include vendor('transition', (
-					'border-color #{_duration(transition)} ease-in-out',
-					'box-shadow #{_duration(transition)} ease-in-out',
-					'background-color #{_duration(transition)} ease-in-out'
-				));
-				border-radius: _size(border-radius);
-				border: solid _size(border-width) _palette(border);
 				content: '';
 				display: inline-block;
-				height: (_size(element-height) * 0.6);
-				left: 0;
-				line-height: (_size(element-height) * 0.6);
-				//line-height: calc(#{_size(element-height) * 0.6} + 0em);
+				font-size: 0.8rem;
 				position: absolute;
+				top: 0;
+				left: 0;
+				width: (_size(element-height) * 0.675);
+				height: (_size(element-height) * 0.675);
+				line-height: (_size(element-height) * 0.675);
+				background: _palette(border-bg);
+				border: solid 1px _palette(border);
+				border-radius: _size(border-radius);
+				color: _palette(bg);
 				text-align: center;
-				top: -0.15rem;
-				width: (_size(element-height) * 0.6);
+
+				body.is-ie & {
+					line-height: 1.5;
+				}
 			}
 		}
 
 		&:checked + label {
 			&:before {
-				background: _palette(fg-bold) !important;
-				border-color: _palette(fg-bold) !important;
-				color: _palette(bg);
 				content: '\f00c';
+				background: _palette(fg-bold);
+				border-color: _palette(fg-bold);
 			}
 		}
 
 		&:focus + label {
 			&:before {
-				background: _palette(border-bg);
-				border-color: _palette(fg-bold);
-				box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);
+				border-color: _palette(accent3);
+				box-shadow: 0 0 0 1px _palette(accent3);
+			}
+		}
+
+		&:focus:checked + label {
+			&:before {
+				background: _palette(accent3);
+			}
+		}
+
+		&.color1 {
+			& + label {
+				&:before {
+					color: _palette(accent1);
+				}
+			}
+		}
+
+		&.color2 {
+			& + label {
+				&:before {
+					color: _palette(accent2);
+				}
+			}
+		}
+
+		&.color3 {
+			& + label {
+				&:before {
+					color: _palette(accent3);
+				}
+			}
+		}
+
+		&.color4 {
+			& + label {
+				&:before {
+					color: _palette(accent4);
+				}
 			}
 		}
 	}
@@ -242,11 +274,6 @@
 	}
 
 	:-ms-input-placeholder {
-		color: _palette(fg-light) !important;
-		opacity: 1.0;
-	}
-
-	.formerize-placeholder {
 		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}
